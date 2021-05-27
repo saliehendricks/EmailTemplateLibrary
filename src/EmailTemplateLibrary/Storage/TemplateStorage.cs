@@ -33,5 +33,17 @@ namespace EmailTemplateLibrary.Storage
                 }
             }
         }
+
+        public virtual string GetTemplate(string keyName) 
+        {
+            return "Not implemented";
+        }
+
+        public virtual void SaveTemplate(string keyName, string content) 
+        { }
+
+        public virtual void CreateBaseTemplates()
+        {
+        }
     }
 }

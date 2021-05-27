@@ -1,0 +1,40 @@
+﻿@* Generator: Template TypeVisibility: Public GeneratePrettyNames: True *@
+@using System
+@using System.Globalization
+@using System.Reflection
+@using EmailTemplateLibrary.Dashboard
+@inherits RazorPage
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Email Template Library</title>
+</head>
+<body>
+    <div class="loading">Loading Templates...</div>
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+        <!-- Begin page content -->
+        <div class="container" style="margin-bottom: 20px;">
+            <!-- Error alert when polling fails -->
+            @*@Html.RenderPartial(new ErrorAlert())*@
+
+            @RenderBody()
+        </div>
+    </div>
+    <div id="footer">
+        <div class="container">
+            <ul class="list-inline credit">
+                <li>
+                    <a href="" target="_blank" rel="noopener noreferrer">
+                        Email Template Library v0.0.1
+                    </a>
+                </li>
+                <li>@Storage</li>
+                <li>@Html.LocalTime(DateTime.UtcNow)</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

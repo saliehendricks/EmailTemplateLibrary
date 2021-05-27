@@ -34,28 +34,31 @@ namespace EmailTemplateLibrary
             _routes = routes;
         }
 
-        public async Task Invoke(HttpContext httpContext)
+        public async Task InvokeAsync(HttpContext httpContext)
         {
             var context = new AspNetCoreDashboardContext(_storage, _options, httpContext);
             var findResult = _routes.FindDispatcher(httpContext.Request.Path.Value);
 
             if (findResult == null)
             {
-                await _next.Invoke(httpContext);
+                //await _next.Invoke(httpContext);
                 return;
             }
 
-            foreach (var filter in _options.Authorization)
+            if (_options.Authorization != null) 
             {
-                if (!filter.Authorize(context))
+                foreach (var filter in _options.Authorization)
                 {
-                    var isAuthenticated = httpContext.User?.Identity?.IsAuthenticated;
+                    if (!filter.Authorize(context))
+                    {
+                        var isAuthenticated = httpContext.User?.Identity?.IsAuthenticated;
 
-                    httpContext.Response.StatusCode = isAuthenticated == true
-                        ? (int)HttpStatusCode.Forbidden
-                        : (int)HttpStatusCode.Unauthorized;
+                        httpContext.Response.StatusCode = isAuthenticated == true
+                            ? (int)HttpStatusCode.Forbidden
+                            : (int)HttpStatusCode.Unauthorized;
 
-                    return;
+                        return;
+                    }
                 }
             }
 
@@ -79,6 +82,9 @@ namespace EmailTemplateLibrary
             context.UriMatch = findResult.Item2;
 
             await findResult.Item1.Dispatch(context);
+            
+            await _next(httpContext);
+
         }
     }
 }

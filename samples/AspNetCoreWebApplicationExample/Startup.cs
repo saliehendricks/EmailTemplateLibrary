@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using EmailTemplateLibrary;
+using EmailTemplateLibrary.Dashboard;
 
 namespace AspNetCoreWebApplicationExample
 {
@@ -25,6 +26,7 @@ namespace AspNetCoreWebApplicationExample
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddEmailTemplateLibraryServices(new DashboardOptions() { IgnoreAntiforgeryToken = true });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,4 +1,5 @@
 ﻿using EmailTemplateLibrary.Dashboard;
+using EmailTemplateLibrary.Storage;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using System;
@@ -10,14 +11,13 @@ namespace EmailTemplateLibrary
     public static class EmailTemplateLibraryServiceCollectionExtensions
     {
         public static IServiceCollection AddEmailTemplateLibraryServices(
-            this IServiceCollection services)
+            this IServiceCollection services, DashboardOptions options)
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
 
-            //services.TryAddSingletonChecked(_ => TemplateStorage.Current);
-
+            services.TryAddSingleton(_ => TemplateStorage.Current);
             services.TryAddSingleton(_ => DashboardRoutes.Routes);
-            
+            services.TryAddTransient(_ => options);
             //services.AddSingleton<IGlobalConfiguration>(serviceProvider =>
             //{
             //    var configurationInstance = GlobalConfiguration.Configuration;
@@ -30,7 +30,7 @@ namespace EmailTemplateLibrary
             //    {
             //        configurationInstance.UseLogProvider(new AspNetCoreLogProvider(loggerFactory));
             //    }
-                
+
             //    return configurationInstance;
             //});
 

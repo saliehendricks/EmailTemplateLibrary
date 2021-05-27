@@ -32,6 +32,14 @@ namespace EmailTemplateLibrary
             _storage = storage;
             _options = options;
             _routes = routes;
+
+            if (_options.LoadBaseTemplates) 
+            {
+                if (_storage != null)
+                {
+                    _storage.CreateBaseTemplates();
+                }                
+            }
         }
 
         public async Task InvokeAsync(HttpContext httpContext)

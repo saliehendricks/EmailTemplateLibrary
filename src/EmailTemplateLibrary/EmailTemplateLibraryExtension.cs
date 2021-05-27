@@ -43,7 +43,7 @@ namespace EmailTemplateLibrary
         /// Please see <see cref="AppBuilderExtensions"/> for details and examples.
         /// </remarks>
         public static IApplicationBuilder UseEmailTemplateLibrary(this IApplicationBuilder builder, 
-            string pathMatch = "/managetemplates",
+            string pathMatch = "/templates",
             TemplateStorage storage = null)
         {
             if (builder == null) throw new ArgumentNullException(nameof(builder));
@@ -52,15 +52,15 @@ namespace EmailTemplateLibrary
             var services = builder.ApplicationServices;
             var routes = builder.ApplicationServices.GetRequiredService<RouteCollection>();
             
-            storage = storage == null ? new TemplateStorage() : storage;
+            storage = storage == null ? new FileTemplateStorage() : storage;
             var options = builder.ApplicationServices.GetRequiredService<DashboardOptions>();
             builder.Map(new PathString(pathMatch), x => x.UseMiddleware<AspNetCoreDashboardMiddleware>(storage, options, routes));
             return builder;
         }
 
-        public static string RegistrationActivationEmail(string firstname)
+        public static string RegistrationActivationEmailTemplate()
         {
-            string html = $@"<h4>Hi {firstname}, Welcome to HAPI</h4><p>Your account is under review and will be activated shortly.</p>
+            string html = $@"<h4>Hi {{firstname}}, Welcome to HAPI</h4><p>Your account is under review and will be activated shortly.</p>
 <p>Feel free to familiarize yourself with the documentation and samples in the meant time.</p><br/>";
             return html;
         }

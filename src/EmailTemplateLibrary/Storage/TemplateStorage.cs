@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EmailTemplateLibrary.Model;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -43,7 +44,11 @@ namespace EmailTemplateLibrary.Storage
         { }
 
         public virtual void CreateBaseTemplates()
+        { }
+
+        public virtual List<Template> GetTemplates(string query="")
         {
+            throw new NotImplementedException();
         }
     }
 }

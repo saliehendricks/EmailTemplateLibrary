@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Globalization;
 using Microsoft.AspNetCore.Antiforgery;
+using System.Text;
 
 namespace EmailTemplateLibrary.Dashboard
 {
@@ -15,14 +16,9 @@ namespace EmailTemplateLibrary.Dashboard
     {
         public TemplateStorage Storage { get; set; }
         public DashboardOptions Options { get; set; }
-
-        //private readonly Lazy<bool> _isReadOnlyLazy;
         public Match UriMatch { get; set; }
-
         public DashboardRequest Request { get; set; }
         public DashboardResponse Response { get; set; }
-
-        // public bool IsReadOnly => _isReadOnlyLazy.Value;
         public string AntiforgeryHeader { get; set; }
         public string AntiforgeryToken { get; set; }
     }
@@ -74,12 +70,23 @@ namespace EmailTemplateLibrary.Dashboard
         public override string LocalIpAddress => _context.Connection.LocalIpAddress.ToString();
         public override string RemoteIpAddress => _context.Connection.RemoteIpAddress.ToString();
         public override string GetQuery(string key) => _context.Request.Query[key];
+        public override string GetBody() 
+        {
+            string body = "";
+            _context.Request.EnableBuffering();
+            using (var reader = new StreamReader(_context.Request.Body, Encoding.UTF8, false, 1024, true))
+            {
+                body = reader.ReadToEnd();
+                _context.Request.Body.Seek(0, SeekOrigin.Begin);
+            }
+            return body;
+        }
 
         public override async Task<IList<string>> GetFormValuesAsync(string key)
         {
             var form = await _context.Request.ReadFormAsync();
             return form[key];
-        }
+        }        
     }
 
     internal sealed class AspNetCoreDashboardResponse : DashboardResponse

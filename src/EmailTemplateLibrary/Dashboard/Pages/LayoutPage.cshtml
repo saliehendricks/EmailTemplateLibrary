@@ -8,18 +8,16 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
     <title>Email Template Library</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>    
 </head>
 <body>
-    <div class="loading">Loading Templates...</div>
-    <!-- Wrap all page content here -->
     <div id="wrap">
-        <!-- Begin page content -->
         <div class="container" style="margin-bottom: 20px;">
-            <!-- Error alert when polling fails -->
-            @*@Html.RenderPartial(new ErrorAlert())*@
-
             @RenderBody()
         </div>
     </div>
@@ -36,5 +34,7 @@
             </ul>
         </div>
     </div>
+    @{ var version = GetType().GetTypeInfo().Assembly.GetName().Version; }
+    <script src="@Url.To($"/js{version.Major}{version.Minor}{version.Build}0")"></script>
 </body>
 </html>

@@ -1,18 +1,6 @@
-﻿// This file is part of Hangfire.
-// Copyright © 2013-2014 Sergey Odinokov.
-// 
-// Hangfire is free software: you can redistribute it and/or modify
-// it under the terms of the GNU Lesser General Public License as 
-// published by the Free Software Foundation, either version 3 
-// of the License, or any later version.
-// 
-// Hangfire is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU Lesser General Public License for more details.
-// 
-// You should have received a copy of the GNU Lesser General Public 
-// License along with Hangfire. If not, see <http://www.gnu.org/licenses/>.
+﻿// This file is adapted the from Hangfire library.
+// Author Attribution: Sergey Odinokov.
+// License along with Hangfire. See <http://www.gnu.org/licenses/>.
 
 using System;
 using System.Collections.Generic;
@@ -80,7 +68,7 @@ namespace EmailTemplateLibrary.Dashboard
             }
         }
 
-        public HtmlHelper( RazorPage page)
+        public HtmlHelper(RazorPage page)
         {
             if (page == null) throw new ArgumentNullException(nameof(page));
             _page = page;
@@ -136,9 +124,7 @@ namespace EmailTemplateLibrary.Dashboard
         public NonEscapedString Raw(string value)
         {
             return new NonEscapedString(value);
-        }
-
-        
+        }        
 
         public NonEscapedString RelativeTime(DateTime value)
         {

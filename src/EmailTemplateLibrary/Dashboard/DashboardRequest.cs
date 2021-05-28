@@ -14,5 +14,6 @@ namespace EmailTemplateLibrary.Dashboard
 
         public abstract string GetQuery(string key);
         public abstract Task<IList<string>> GetFormValuesAsync(string key);
+        public abstract string GetBody();
     }
 }

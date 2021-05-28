@@ -11,7 +11,6 @@ Storage options:
 - Mongo
 - Redis
 
-
 # Installation
 
 ```
@@ -25,3 +24,9 @@ public void Configuration(IAppBuilder app)
     app.UseEmailTemplateLibrary(); // Defaults to file system
 }
 ```
+
+## TODO
+[ ] Sample Email generation
+[ ] Default Templates
+[ ] Default Styles
+[ ] Override Styles

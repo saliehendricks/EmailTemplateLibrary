@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EmailTemplateLibrary.Dashboard;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
@@ -64,5 +65,18 @@ namespace EmailTemplateLibrary
 
             return DeserializeDateTime(value);
         }
+
+        public static void AddCommand(
+            this RouteCollection routes,
+            string pathTemplate,
+            Func<DashboardContext, bool> command)
+        {
+            if (routes == null) throw new ArgumentNullException(nameof(routes));
+            if (pathTemplate == null) throw new ArgumentNullException(nameof(pathTemplate));
+            if (command == null) throw new ArgumentNullException(nameof(command));
+
+            routes.Add(pathTemplate, new CommandDispatcher(command));
+        }
+
     }
 }

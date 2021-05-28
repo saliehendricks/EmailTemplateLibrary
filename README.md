@@ -3,13 +3,20 @@
 ## Build Status
 
 ## Overview
-An easy to store and modify string/html based templates for emails, sms' or anything else that requires a template.
+An easy way to add string based templates to your dotnet application. Store and modify string or html based templates for emails, sms' or anything else that requires a template.
+
+![image](https://user-images.githubusercontent.com/1830594/120047159-35d59200-c014-11eb-9448-88244a623027.png)
 
 Storage options:
-- File
-- SQL
-- Mongo
-- Redis
+- File: Stores templates on disk. Suitable for single site web applications or service.
+- Mongo - TODO 
+- SQL - TODO
+
+# Base Templates
+Optionally include base templates:
+- NewUserActivationEmail
+- NewUserAdminActivationEmail
+- PasswordResetEmail
 
 # Installation
 
@@ -19,6 +26,14 @@ PM> Install-Package EmailTemplateLibrary
 Then update your Startup.cs file:
 
 ```cs
+services.AddEmailTemplateLibraryServices(new DashboardOptions()
+            {
+                IgnoreAntiforgeryToken = true,
+                LoadBaseTemplates = true
+            });
+```
+and
+```cs         
 public void Configuration(IAppBuilder app)
 {
     app.UseEmailTemplateLibrary(); // Defaults to file system
@@ -26,7 +41,8 @@ public void Configuration(IAppBuilder app)
 ```
 
 ## TODO
-[ ] Sample Email generation
-[ ] Default Templates
-[ ] Default Styles
-[ ] Override Styles
+- [x] Sample project showing usage
+- [ ] Default Templates
+- [ ] Mongo Storage
+- [ ] SQL Storage
+- [ ] Override Styles

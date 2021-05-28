@@ -26,10 +26,8 @@ namespace EmailTemplateLibrary.Dashboard
 
             if (!"POST".Equals(request.Method, StringComparison.OrdinalIgnoreCase))
             {
-                response.StatusCode = (int)HttpStatusCode.MethodNotAllowed;
-                return Task.FromResult(false);
+                response.StatusCode = (int)HttpStatusCode.MethodNotAllowed;                
             }
-
             if (_command(context))
             {
                 response.StatusCode = (int)HttpStatusCode.NoContent;

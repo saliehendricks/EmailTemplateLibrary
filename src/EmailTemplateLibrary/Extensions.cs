@@ -77,6 +77,5 @@ namespace EmailTemplateLibrary
 
             routes.Add(pathTemplate, new CommandDispatcher(command));
         }
-
     }
 }

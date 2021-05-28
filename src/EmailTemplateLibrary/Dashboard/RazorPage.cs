@@ -30,15 +30,6 @@ namespace EmailTemplateLibrary.Dashboard
         public DashboardOptions DashboardOptions => Context.Options;
         public Stopwatch GenerationTime { get; private set; }
 
-        //public StatisticsDto Statistics
-        //{
-        //    get
-        //    {
-        //        if (_statisticsLazy == null) throw new InvalidOperationException("Page is not initialized.");
-        //        return _statisticsLazy.Value;
-        //    }
-        //}
-
         public DashboardContext Context { get; private set; }
 
         internal DashboardRequest Request => Context.Request;

@@ -70,13 +70,13 @@ namespace EmailTemplateLibrary.Dashboard
         public override string LocalIpAddress => _context.Connection.LocalIpAddress.ToString();
         public override string RemoteIpAddress => _context.Connection.RemoteIpAddress.ToString();
         public override string GetQuery(string key) => _context.Request.Query[key];
-        public override string GetBody() 
+        public override async Task<string> GetBodyAsync() 
         {
             string body = "";
             _context.Request.EnableBuffering();
             using (var reader = new StreamReader(_context.Request.Body, Encoding.UTF8, false, 1024, true))
             {
-                body = reader.ReadToEnd();
+                body = await reader.ReadToEndAsync();
                 _context.Request.Body.Seek(0, SeekOrigin.Begin);
             }
             return body;

@@ -42,6 +42,11 @@
 		  <Generator>RazorGenerator</Generator>
 		  <LastGenOutput>DashboardContext.generated.cs</LastGenOutput>
 		</Compile>
+		<Compile Update="Dashboard\DashboardContext.generated.cs">
+		  <DesignTime>True</DesignTime>
+		  <AutoGen>True</AutoGen>
+		  <DependentUpon>DashboardContext.cs</DependentUpon>
+		</Compile>
 		<Compile Update="Dashboard\Pages\HomePage.cshtml.cs">
 			<DependentUpon>HomePage.cshtml</DependentUpon>
 		</Compile>

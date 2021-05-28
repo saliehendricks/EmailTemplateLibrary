@@ -33,6 +33,9 @@
                 <li>@Html.LocalTime(DateTime.UtcNow)</li>
             </ul>
         </div>
+        <div id="templateConfig"
+             data-baseurl="@(Url.To("/"))">
+        </div>
     </div>
     @{ var version = GetType().GetTypeInfo().Assembly.GetName().Version; }
     <script src="@Url.To($"/js{version.Major}{version.Minor}{version.Build}0")"></script>

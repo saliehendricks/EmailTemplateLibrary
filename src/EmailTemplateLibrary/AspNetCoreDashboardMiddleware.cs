@@ -49,7 +49,6 @@ namespace EmailTemplateLibrary
 
             if (findResult == null)
             {
-                //await _next.Invoke(httpContext);
                 return;
             }
 
@@ -89,9 +88,7 @@ namespace EmailTemplateLibrary
 
             context.UriMatch = findResult.Item2;
 
-            await findResult.Item1.Dispatch(context);
-            
-            await _next(httpContext);
+            await findResult.Item1.Dispatch(context);           
 
         }
     }

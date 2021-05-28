@@ -1,13 +1,81 @@
 ﻿@* Generator: Template TypeVisibility: Internal GeneratePrettyNames: True *@
 @using System
 @using System.Collections.Generic
+@using System.Text.Json;
 @using EmailTemplateLibrary.Dashboard
 @using EmailTemplateLibrary.Dashboard.Pages
+@using EmailTemplateLibrary.Model
 @inherits RazorPage
 @{
     Layout = new LayoutPage();
 }
 
-<div class="row">
-    Home page
+<div class="container">
+    <h2>Templates</h2>
+    <p>Edit view or delete templates</p>
+    <button type="button" class="btn btn-successs" id="newTemplate">
+        New Template
+    </button>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Template Key</th>
+                <th>Last Modified</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (Template t in Templates)
+            {
+                <tr>
+                    <td>
+                        <h5>@t.TemplateKey</h5>
+                    </td>
+                    <td>
+                        <span>Last modified: @t.Modified</span>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#viewTemplateModal" data-templatekey="@t.TemplateKey">
+                            View / Edit
+                        </button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="modal fade" id="viewTemplateModal">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Edit</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <input id="templateTextInput" value="Template will be placed here"/>
+                    
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    @{
+        <script>
+            let librarytemplates = @Html.Raw(TemplatesJson);
+        </script>
+    }
 </div>

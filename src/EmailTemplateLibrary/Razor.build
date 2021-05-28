@@ -3,7 +3,7 @@
   <Import Project="..\..\packages\RazorGenerator.MsBuild.2.5.0\build\RazorGenerator.MsBuild.targets" />
   <PropertyGroup>
     <RootNamespace>EmailTemplateLibrary</RootNamespace>
-    <GeneratePrettyNames>true</GeneratePrettyNames>
-    <RazorViewsCodeGenDirectory>$(MsBuildProjectDirectory)\</RazorViewsCodeGenDirectory>
+    <GeneratePrettyNames>True</GeneratePrettyNames>
+    <!--<RazorViewsCodeGenDirectory>$(MsBuildProjectDirectory)\</RazorViewsCodeGenDirectory>-->
   </PropertyGroup>
 </Project>

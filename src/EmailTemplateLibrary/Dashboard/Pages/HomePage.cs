@@ -1,22 +1,38 @@
-﻿using EmailTemplateLibrary.Storage;
-using System;
+﻿using EmailTemplateLibrary.Model;
+using EmailTemplateLibrary.Storage;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json;
 
 namespace EmailTemplateLibrary.Dashboard.Pages
 {
-    public class Template 
-    {
-        public string TemplateKey { get; set; }
-        public string TemplateText { get; set; }
-        public string Md5Hash { get; set; }
-        public DateTime Created { get; set; }
-        public DateTime Modified { get; set; }
-    }
     partial class HomePage
     {
-        public HomePage()
-        {            
+        private List<Template> _templates;
+        
+        public List<Template> Templates 
+        { 
+            get
+            {
+                if (_templates == null) 
+                {
+                    _templates = Storage.GetTemplates();
+                }                
+                return _templates;
+            }
         }
+
+        public string TemplatesJson 
+        {
+            get 
+            {
+                if (_templates == null)
+                {
+                    _templates = Storage.GetTemplates();
+                }
+                return JsonSerializer.Serialize(_templates);
+            }
+        }
+
     }
 }

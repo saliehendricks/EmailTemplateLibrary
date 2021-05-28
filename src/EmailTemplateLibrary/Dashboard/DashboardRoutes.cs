@@ -7,6 +7,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using EmailTemplateLibrary.Model;
 using System.Reflection;
+using System.Threading.Tasks;
 
 namespace EmailTemplateLibrary.Dashboard
 {
@@ -21,22 +22,27 @@ namespace EmailTemplateLibrary.Dashboard
         {
             Routes = new RouteCollection();
             Routes.AddRazorPage("/", x => new HomePage());
-            Routes.AddCommand("/savetemplate",
-                context =>
-                {
-                    string body = context.Request.GetBody();
-                    Template model = JsonSerializer.Deserialize<Template>(body);
-                    context.Storage.SaveTemplate(model.TemplateKey, model.TemplateText);
-
-                    //var client = context.GetBackgroundJobClient();
-                    //return client.ChangeState(context.UriMatch.Groups["JobId"].Value, CreateDeletedState());
-                    return true;                    
-                });
+            //Routes.AddCommand("/savetemplate", async context => {
+            //    await SaveTemplateHandler(context);
+            //    return true;
+            //});
+            Routes.AddCommand("/savetemplate", context => {
+                var result = Task.FromResult(SaveTemplateHandler(context));
+                return true;
+            });
             Routes.Add("/js[0-9]+", new CombinedResourceDispatcher(
                 "application/javascript",
                 GetExecutingAssembly(),
                 GetContentFolderNamespace("js"),
                 Javascripts));
+        }
+
+        private static async Task<bool> SaveTemplateHandler(DashboardContext context) 
+        {
+            string body = await context.Request.GetBodyAsync();
+            Template model = JsonSerializer.Deserialize<Template>(body, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true});
+            context.Storage.SaveTemplate(model.TemplateKey, model.TemplateText);
+            return true;
         }
 
         public static void AddRazorPage(

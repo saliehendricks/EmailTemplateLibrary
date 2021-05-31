@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCoreConsoleApp", "sam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailTemplateLibrary.Storage.Mongo", "src\EmailTemplateLibrary.Storage.Mongo\EmailTemplateLibrary.Storage.Mongo.csproj", "{86761341-4BDE-4B69-A28F-C4FC297B7715}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailTemplateLibrary.UnitTests", "tests\EmailTemplateLibrary.UnitTests\EmailTemplateLibrary.UnitTests.csproj", "{0F8EC27F-9DBC-41AC-AE21-7367A9BD5058}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +50,10 @@ Global
 		{86761341-4BDE-4B69-A28F-C4FC297B7715}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86761341-4BDE-4B69-A28F-C4FC297B7715}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86761341-4BDE-4B69-A28F-C4FC297B7715}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F8EC27F-9DBC-41AC-AE21-7367A9BD5058}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F8EC27F-9DBC-41AC-AE21-7367A9BD5058}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F8EC27F-9DBC-41AC-AE21-7367A9BD5058}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F8EC27F-9DBC-41AC-AE21-7367A9BD5058}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{79D0F983-6F4F-43E2-81A2-4C21FD094C92} = {82546879-2B5A-4699-B145-DDDFE1627237}
 		{EF94A41F-BCE5-40E7-B920-B05D7A0E16DF} = {82546879-2B5A-4699-B145-DDDFE1627237}
+		{0F8EC27F-9DBC-41AC-AE21-7367A9BD5058} = {C021C112-2FC7-494D-BF57-CE763AF7F857}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {316F0EA4-F0A6-4279-A0C0-727900264B6F}

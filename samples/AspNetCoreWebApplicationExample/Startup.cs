@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using EmailTemplateLibrary;
 using EmailTemplateLibrary.Dashboard;
 using EmailTemplateLibrary.AspNetCore;
+using EmailTemplateLibrary.Storage.Mongo;
 
 namespace AspNetCoreWebApplicationExample
 {
@@ -31,7 +32,11 @@ namespace AspNetCoreWebApplicationExample
             {
                 IgnoreAntiforgeryToken = true,
                 LoadBaseTemplates = true
+            })
+            .AddMongoStorage(new MongoStorageOptions() { 
+                UrlConnection = "mongodb://safarinow-cosmos-mongo:RYxTyO6ceduURZ3brB2IcIxHqrqPCu6HEpyPHji8pSrXy0TJSxkrmxWoR9IbeRJClorKKp1LkzQJCq8oei3oyA==@safarinow-cosmos-mongo.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@safarinow-cosmos-mongo@&retrywrites=false"
             });
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

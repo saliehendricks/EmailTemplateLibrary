@@ -5,11 +5,6 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace EmailTemplateLibrary.Storage.Mongo
 {
-    public class MongoStorageOptions 
-    {
-        public string UrlConnection { get; set; }        
-    }
-
     public static class EmailTemplateLibraryServiceCollectionMongoStorageExtensions
     {
         public static IServiceCollection AddMongoStorage(

@@ -8,8 +8,14 @@ namespace EmailTemplateLibrary.BaseTemplates
     {
         public static string RegistrationActivationEmailTemplate()
         {
-            string html = $@"<h4>Hi {{firstname}}, Welcome to HAPI</h4><p>Your account is under review and will be activated shortly.</p>
-<p>Feel free to familiarize yourself with the documentation and samples in the meant time.</p><br/>";
+            string html = $@"<h4>Hi {{{{firstname}}}}, Welcome to HAPI</h4>
+<p>
+    Your account is under review and will be activated shortly.
+</p>
+<p>
+    Feel free to familiarize yourself with the documentation and samples in the meant time.
+</p>
+<br/>";
             return html;
         }
     }

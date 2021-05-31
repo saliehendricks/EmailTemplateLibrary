@@ -40,12 +40,12 @@
                         <span>Last modified: @t.Modified</span>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#viewTemplateModal" data-templatekey="@t.TemplateKey">
+                        <button type="button" class="btn btn-primary viewTemplate" data-templatekey="@t.TemplateKey">
                             View / Edit
                         </button>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-danger">
+                        <button type="button" class="btn btn-danger deleteTemplate" data-templatekey="@t.TemplateKey">
                             Delete
                         </button>
                     </td>
@@ -54,6 +54,7 @@
         </tbody>
     </table>
     <div class="modal fade" id="viewTemplateModal">
+        <input type="hidden" id="isNewTeplate" value="false"/>
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">

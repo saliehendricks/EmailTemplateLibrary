@@ -33,13 +33,13 @@ namespace EmailTemplateLibrary.AspNetCore.Dashboard
             _options = options;
             _routes = routes;
 
-            if (_options.LoadBaseTemplates)
-            {
-                if (_storage != null)
-                {
-                    _storage.CreateBaseTemplates();
-                }
-            }
+            //if (_options.LoadBaseTemplates)
+            //{
+            //    if (_storage != null)
+            //    {
+            //        _storage.CreateBaseTemplates();
+            //    }
+            //}
         }
 
         public async Task InvokeAsync(HttpContext httpContext)
@@ -50,6 +50,15 @@ namespace EmailTemplateLibrary.AspNetCore.Dashboard
             if (findResult == null)
             {
                 return;
+            }
+
+            if (_options.LoadBaseTemplates && !TemplateStorage.IsBaseTemplatesLoaded)
+            {
+                if (_storage != null)
+                {
+                    _storage.CreateBaseTemplates();
+                    TemplateStorage.IsBaseTemplatesLoaded = true;
+                }
             }
 
             if (_options.Authorization != null)

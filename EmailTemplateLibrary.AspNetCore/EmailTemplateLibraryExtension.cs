@@ -44,17 +44,16 @@ namespace EmailTemplateLibrary
         /// Please see <see cref="AppBuilderExtensions"/> for details and examples.
         /// </remarks>
         public static IApplicationBuilder UseEmailTemplateLibrary(this IApplicationBuilder builder, 
-            string pathMatch = "/templates",
-            TemplateStorage storage = null)
+            string pathMatch = "/templates")
         {
             if (builder == null) throw new ArgumentNullException(nameof(builder));
             if (pathMatch == null) throw new ArgumentNullException(nameof(pathMatch));
 
             var services = builder.ApplicationServices;
             var routes = builder.ApplicationServices.GetRequiredService<RouteCollection>();
-            
-            storage = storage == null ? new FileTemplateStorage() : storage;
+            var storage = builder.ApplicationServices.GetRequiredService<TemplateStorage>();
             var options = builder.ApplicationServices.GetRequiredService<DashboardOptions>();
+            //storage == null ? new FileTemplateStorage() : storage;
             builder.Map(new PathString(pathMatch), x => x.UseMiddleware<AspNetCoreDashboardMiddleware>(storage, options, routes));
             return builder;
         }        

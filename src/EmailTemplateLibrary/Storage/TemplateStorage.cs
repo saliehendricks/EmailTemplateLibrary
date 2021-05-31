@@ -10,8 +10,6 @@ namespace EmailTemplateLibrary.Storage
         private static readonly object LockObject = new object();
         private static TemplateStorage _current;
 
-        private TimeSpan _jobExpirationTimeout = TimeSpan.FromDays(1);
-
         public static TemplateStorage Current
         {
             get
@@ -30,10 +28,12 @@ namespace EmailTemplateLibrary.Storage
             {
                 lock (LockObject)
                 {
-                    _current = value;
+                    _current = value;                    
                 }
             }
         }
+
+        public static bool IsBaseTemplatesLoaded { get; set; }
 
         public virtual string GetTemplate(string keyName) 
         {

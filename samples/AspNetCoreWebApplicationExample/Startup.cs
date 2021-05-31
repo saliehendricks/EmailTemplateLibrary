@@ -33,8 +33,9 @@ namespace AspNetCoreWebApplicationExample
                 IgnoreAntiforgeryToken = true,
                 LoadBaseTemplates = true
             })
-            .AddMongoStorage(new MongoStorageOptions() { 
-                UrlConnection = "mongodb://safarinow-cosmos-mongo:RYxTyO6ceduURZ3brB2IcIxHqrqPCu6HEpyPHji8pSrXy0TJSxkrmxWoR9IbeRJClorKKp1LkzQJCq8oei3oyA==@safarinow-cosmos-mongo.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@safarinow-cosmos-mongo@&retrywrites=false"
+            .AddMongoStorage(new MongoStorageOptions()
+            {
+                UrlConnection = Configuration.GetValue<string>("MongoUrl")
             });
             
         }

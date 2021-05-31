@@ -50,6 +50,20 @@ namespace EmailTemplateLibrary.Storage
             File.WriteAllText(Path.Combine(_folderPath, fileName), content);
         }
 
+        public override void DeleteTemplate(string keyName)
+        {
+            string fileName = $"{keyName}";
+            if (!fileName.EndsWith(".html"))
+            {
+                fileName = $"{fileName}.html";
+            }
+            if (!Directory.Exists(_folderPath))
+            {
+                Directory.CreateDirectory(_folderPath);
+            }
+            File.Delete(Path.Combine(_folderPath, fileName));
+        }
+
         public override void CreateBaseTemplates()
         {
             string registerEmail = BaseTemplates.BaseTemplates.RegistrationActivationEmailTemplate();

@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\EmailTemplateLibrary.AspNetCore\EmailTemplateLibrary.AspNetCore.csproj" />
     <ProjectReference Include="..\..\src\EmailTemplateLibrary\EmailTemplateLibrary.csproj" />
   </ItemGroup>
 

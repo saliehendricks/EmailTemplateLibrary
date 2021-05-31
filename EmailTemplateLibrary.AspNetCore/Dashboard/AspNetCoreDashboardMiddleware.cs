@@ -8,7 +8,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmailTemplateLibrary
+namespace EmailTemplateLibrary.AspNetCore.Dashboard
 {
     public class AspNetCoreDashboardMiddleware
     {
@@ -16,7 +16,7 @@ namespace EmailTemplateLibrary
         private readonly DashboardOptions _options;
         private readonly RouteCollection _routes;
         private readonly TemplateStorage _storage;
-        
+
         public AspNetCoreDashboardMiddleware(
             RequestDelegate next,
             TemplateStorage storage,
@@ -33,12 +33,12 @@ namespace EmailTemplateLibrary
             _options = options;
             _routes = routes;
 
-            if (_options.LoadBaseTemplates) 
+            if (_options.LoadBaseTemplates)
             {
                 if (_storage != null)
                 {
                     _storage.CreateBaseTemplates();
-                }                
+                }
             }
         }
 
@@ -52,7 +52,7 @@ namespace EmailTemplateLibrary
                 return;
             }
 
-            if (_options.Authorization != null) 
+            if (_options.Authorization != null)
             {
                 foreach (var filter in _options.Authorization)
                 {
@@ -88,7 +88,7 @@ namespace EmailTemplateLibrary
 
             context.UriMatch = findResult.Item2;
 
-            await findResult.Item1.Dispatch(context);           
+            await findResult.Item1.Dispatch(context);
 
         }
     }

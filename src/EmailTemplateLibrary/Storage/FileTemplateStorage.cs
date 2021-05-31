@@ -48,7 +48,7 @@ namespace EmailTemplateLibrary.Storage
 
         public override void CreateBaseTemplates()
         {
-            string registerEmail = EmailTemplateLibraryExtension.RegistrationActivationEmailTemplate();
+            string registerEmail = BaseTemplates.BaseTemplates.RegistrationActivationEmailTemplate();
             SaveTemplate("registerEmail", registerEmail);
         }
 

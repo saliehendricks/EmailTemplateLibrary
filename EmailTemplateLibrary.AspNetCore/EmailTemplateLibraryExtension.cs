@@ -26,6 +26,7 @@ using Microsoft.AspNetCore.Hosting;
 #endif
 using EmailTemplateLibrary.Storage;
 using EmailTemplateLibrary.Dashboard;
+using EmailTemplateLibrary.AspNetCore.Dashboard;
 
 namespace EmailTemplateLibrary
 {
@@ -56,13 +57,6 @@ namespace EmailTemplateLibrary
             var options = builder.ApplicationServices.GetRequiredService<DashboardOptions>();
             builder.Map(new PathString(pathMatch), x => x.UseMiddleware<AspNetCoreDashboardMiddleware>(storage, options, routes));
             return builder;
-        }
-
-        public static string RegistrationActivationEmailTemplate()
-        {
-            string html = $@"<h4>Hi {{firstname}}, Welcome to HAPI</h4><p>Your account is under review and will be activated shortly.</p>
-<p>Feel free to familiarize yourself with the documentation and samples in the meant time.</p><br/>";
-            return html;
-        }
+        }        
     }
 }

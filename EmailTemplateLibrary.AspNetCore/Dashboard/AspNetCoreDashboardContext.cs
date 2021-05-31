@@ -34,7 +34,6 @@ namespace EmailTemplateLibrary.AspNetCore.Dashboard
                     AntiforgeryToken = tokenSet.RequestToken;
                 }
             }
-
         }
     }
 }

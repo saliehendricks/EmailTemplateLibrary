@@ -13,7 +13,6 @@ namespace EmailTemplateLibrary.Dashboard
         public IEnumerable<IDashboardAuthorizationFilter> Authorization { get; set; }
         public bool IgnoreAntiforgeryToken { get; set; }
         public string PrefixPath { get; set; }
-        public bool LoadBaseTemplates { get; set; }
-
+        public bool LoadBaseTemplates { get; set; }        
     }
 }

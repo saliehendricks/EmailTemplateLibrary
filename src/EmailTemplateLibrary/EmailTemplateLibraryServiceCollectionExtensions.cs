@@ -14,26 +14,17 @@ namespace EmailTemplateLibrary
             this IServiceCollection services, DashboardOptions options)
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
-
-            services.TryAddSingleton(_ => TemplateStorage.Current);
+            TemplateStorage.Current = new FileTemplateStorage(); //set default
+            services.TryAddSingleton(_ => {
+                if (options.LoadBaseTemplates && !TemplateStorage.IsBaseTemplatesLoaded)
+                {
+                    TemplateStorage.Current.CreateBaseTemplates();
+                    TemplateStorage.IsBaseTemplatesLoaded = true;
+                }
+                return TemplateStorage.Current; 
+            });
             services.TryAddSingleton(_ => DashboardRoutes.Routes);
             services.TryAddTransient(_ => options);
-            //services.AddSingleton<IGlobalConfiguration>(serviceProvider =>
-            //{
-            //    var configurationInstance = GlobalConfiguration.Configuration;
-
-            //    // init defaults for log provider and job activator
-            //    // they may be overwritten by the configuration callback later
-
-            //    var loggerFactory = serviceProvider.GetService<ILoggerFactory>();
-            //    if (loggerFactory != null)
-            //    {
-            //        configurationInstance.UseLogProvider(new AspNetCoreLogProvider(loggerFactory));
-            //    }
-
-            //    return configurationInstance;
-            //});
-
             return services;
         }
     }

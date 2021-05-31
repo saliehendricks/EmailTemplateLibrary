@@ -4,11 +4,22 @@
     $("#newTemplate").click(function() {
 
         $("#viewTemplateModal").modal();
-        let templateKey=this.event;
-        $("#templateTextInput").value="TemplateKey:"+templateKey;
+        $("#isNewTeplate").val("true");
+        $("#templateKeyInput").val("");
+        $("#templateTextInput").val("");
+    });
+
+    $(document).on("click", "button.viewTemplate", function() {
+        $("#viewTemplateModal").modal();
+        $("#isNewTeplate").val("false");
+        
+        $("#templateKeyInput").val($(this).data("templatekey"));
+        let template = librarytemplates.find(x => x.TemplateKey === $(this).data("templatekey"));
+        $("#templateTextInput").val(template.TemplateText);
     });
 
     $("#saveNewTemplate").click(function() {
+
         let newTemplate = {
             'templateKey': $("#templateKeyInput").val(),
             'templateText': $("#templateTextInput").val()
@@ -21,7 +32,7 @@
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function(data) {
-                console.log(result);
+                document.location = document.location;
             },
             error: function(errMsg) {
                 alert(errMsg);

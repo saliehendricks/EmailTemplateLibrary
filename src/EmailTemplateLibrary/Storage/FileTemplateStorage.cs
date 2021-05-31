@@ -38,7 +38,11 @@ namespace EmailTemplateLibrary.Storage
 
         public override void SaveTemplate(string keyName, string content)
         {
-            string fileName = $"{keyName}.html";
+            string fileName = $"{keyName}";
+            if (!fileName.EndsWith(".html"))
+            {
+                fileName = $"{fileName}.html";
+            }
             if (!Directory.Exists(_folderPath))
             {
                 Directory.CreateDirectory(_folderPath);

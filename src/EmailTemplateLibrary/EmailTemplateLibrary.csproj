@@ -13,10 +13,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
-		<PackageReference Include="Microsoft.AspNetCore.Antiforgery" Version="2.2.0" />
-		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
-		<PackageReference Include="Microsoft.AspNetCore.Routing" Version="2.2.2" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
 		<PackageReference Include="RazorGenerator.MsBuild" Version="2.5.0">
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -39,13 +36,7 @@
 
 	<ItemGroup>
 		<Compile Update="Dashboard\DashboardContext.cs">
-		  <Generator>RazorGenerator</Generator>
-		  <LastGenOutput>DashboardContext.generated.cs</LastGenOutput>
-		</Compile>
-		<Compile Update="Dashboard\DashboardContext.generated.cs">
-		  <DesignTime>True</DesignTime>
-		  <AutoGen>True</AutoGen>
-		  <DependentUpon>DashboardContext.cs</DependentUpon>
+		  <Generator></Generator>
 		</Compile>
 		<Compile Update="Dashboard\Pages\HomePage.cshtml.cs">
 			<DependentUpon>HomePage.cshtml</DependentUpon>

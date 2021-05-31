@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using EmailTemplateLibrary;
 using EmailTemplateLibrary.Dashboard;
+using EmailTemplateLibrary.AspNetCore;
 
 namespace AspNetCoreWebApplicationExample
 {

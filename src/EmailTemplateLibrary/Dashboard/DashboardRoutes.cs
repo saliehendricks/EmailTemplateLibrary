@@ -21,13 +21,13 @@ namespace EmailTemplateLibrary.Dashboard
         static DashboardRoutes()
         {
             Routes = new RouteCollection();
-            Routes.AddRazorPage("/", x => new HomePage());
-            //Routes.AddCommand("/savetemplate", async context => {
-            //    await SaveTemplateHandler(context);
-            //    return true;
-            //});
+            Routes.AddRazorPage("/", x => new HomePage());           
             Routes.AddCommand("/savetemplate", context => {
                 var result = Task.FromResult(SaveTemplateHandler(context));
+                return true;
+            });
+            Routes.AddCommand("/deletetemplate", context => {
+                var result = Task.FromResult(DeleteTemplateHandler(context));
                 return true;
             });
             Routes.Add("/js[0-9]+", new CombinedResourceDispatcher(
@@ -42,6 +42,14 @@ namespace EmailTemplateLibrary.Dashboard
             string body = await context.Request.GetBodyAsync();
             Template model = JsonSerializer.Deserialize<Template>(body, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true});
             context.Storage.SaveTemplate(model.TemplateKey, model.TemplateText);
+            return true;
+        }
+
+        private static async Task<bool> DeleteTemplateHandler(DashboardContext context)
+        {
+            string body = await context.Request.GetBodyAsync();
+            Template model = JsonSerializer.Deserialize<Template>(body, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+            context.Storage.DeleteTemplate(model.TemplateKey);
             return true;
         }
 

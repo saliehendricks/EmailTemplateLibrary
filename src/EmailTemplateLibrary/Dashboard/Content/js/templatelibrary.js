@@ -18,6 +18,32 @@
         $("#templateTextInput").val(template.TemplateText);
     });
 
+    $(document).on("click", "button.deleteTemplate", function() {
+        if(!confirm("Are you sure you want to delete this template?")) {
+            return;
+        }
+        $("#isNewTeplate").val("false");
+        
+        let deleteTemplate = {
+            'templateKey': $(this).data("templatekey")
+        };
+
+        $.ajax({
+            type: "POST",
+            url: baseUrl + "deletetemplate",
+            data: JSON.stringify(deleteTemplate),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function(data) {
+                document.location = document.location;
+            },
+            error: function(errMsg) {
+                alert(errMsg);
+            }
+        });
+
+    });
+
     $("#saveNewTemplate").click(function() {
 
         let newTemplate = {

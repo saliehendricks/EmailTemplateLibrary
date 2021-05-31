@@ -43,6 +43,9 @@ namespace EmailTemplateLibrary.Storage
         public virtual void SaveTemplate(string keyName, string content) 
         { }
 
+        public virtual void DeleteTemplate(string keyName)
+        { }
+
         public virtual void CreateBaseTemplates()
         { }
 

@@ -6,6 +6,14 @@
 
 	<ItemGroup>
 	  <None Remove="Dashboard\Content\templatelibrary.js" />
+	  <None Include="..\..\icon.png">
+	    <Pack>True</Pack>
+	    <PackagePath></PackagePath>
+	  </None>
+	  <None Include="..\..\LICENSE">
+	    <Pack>True</Pack>
+	    <PackagePath></PackagePath>
+	  </None>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -26,6 +34,19 @@
 		<MSBuildCurrentFullPath>$(MSBuildBinPath)\MSBuild.exe</MSBuildCurrentFullPath>
 		<RazorProjectFile>Razor.build</RazorProjectFile>
 		<InnerTargets>GenerateRazorClasses;Build</InnerTargets>
+		<Authors>Salie Hendricks</Authors>
+		<PackageLicenseExpression></PackageLicenseExpression>
+		<Copyright>MIT License</Copyright>
+		<Description>An easy way to add, store and retreive string based templates to your dotnet application.</Description>
+		<PackageProjectUrl>https://github.com/saliehendricks/EmailTemplateLibrary</PackageProjectUrl>
+		<PackageIcon>icon.png</PackageIcon>
+		<RepositoryUrl>https://github.com/saliehendricks/EmailTemplateLibrary</RepositoryUrl>
+		<RepositoryType>Github</RepositoryType>
+		<PackageTags>Template, Strings, Email, SMS</PackageTags>
+		<PackageReleaseNotes>01 June 2021
+- First version released for beta testing</PackageReleaseNotes>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 	</PropertyGroup>
 
 	<Target Name="GenerateRazorClasses">

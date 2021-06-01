@@ -1,7 +1,19 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Salie Hendricks</Authors>
+    <Description>An easy way to add, store and retreive string based templates to your dotnet application. Configures routes and UI to manage templates</Description>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/saliehendricks/EmailTemplateLibrary</PackageProjectUrl>
+    <PackageIcon>icon.png</PackageIcon>
+    <RepositoryUrl>https://github.com/saliehendricks/EmailTemplateLibrary</RepositoryUrl>
+    <RepositoryType>Github</RepositoryType>
+    <PackageTags>Template, Strings, Email, SMS</PackageTags>
+    <PackageReleaseNotes>01 June 2021
+- First version released for beta testing</PackageReleaseNotes>
+    <Copyright>MIT License</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +24,17 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EmailTemplateLibrary\EmailTemplateLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

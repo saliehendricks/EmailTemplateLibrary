@@ -11,7 +11,7 @@ namespace EmailTemplateLibrary.AspNetCore.Dashboard
     {
         public HttpContext HttpContext { get; }
 
-        public AspNetCoreDashboardContext(TemplateStorage storage, DashboardOptions options, HttpContext httpContext)
+        public AspNetCoreDashboardContext(TemplateStorage storage, TemplateDashboardOptions options, HttpContext httpContext)
         {
             if (storage == null) throw new ArgumentNullException(nameof(storage));
             if (options == null) throw new ArgumentNullException(nameof(options));

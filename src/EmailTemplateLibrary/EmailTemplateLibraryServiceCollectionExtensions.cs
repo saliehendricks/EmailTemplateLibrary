@@ -11,7 +11,7 @@ namespace EmailTemplateLibrary
     public static class EmailTemplateLibraryServiceCollectionExtensions
     {
         public static IServiceCollection AddEmailTemplateLibraryServices(
-            this IServiceCollection services, DashboardOptions options)
+            this IServiceCollection services, TemplateDashboardOptions options)
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
             TemplateStorage.Current = new FileTemplateStorage(); //set default

@@ -15,7 +15,7 @@ namespace EmailTemplateLibrary.Storage.Mongo
 
         public MongoTemplateStorage(MongoStorageOptions options)
         {
-            _mongoContext = new MongoDBContext<TemplateDto>(options.UrlConnection);
+            _mongoContext = new MongoTemplateDBContext<TemplateDto>(options.UrlConnection);
             _dbCollection = _mongoContext.GetCollection<TemplateDto>(_collectionName);
         }
 

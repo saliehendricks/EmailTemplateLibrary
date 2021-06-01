@@ -27,7 +27,7 @@ namespace EmailTemplateLibrary.Dashboard
 
         public TemplateStorage Storage => Context.Storage;
         public string AppPath => Context.Options.AppPath;
-        public DashboardOptions DashboardOptions => Context.Options;
+        public TemplateDashboardOptions DashboardOptions => Context.Options;
         public Stopwatch GenerationTime { get; private set; }
 
         public DashboardContext Context { get; private set; }

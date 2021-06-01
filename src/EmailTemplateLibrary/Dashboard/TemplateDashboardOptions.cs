@@ -4,7 +4,7 @@ using System.Text;
 namespace EmailTemplateLibrary.Dashboard
 {
 
-    public class DashboardOptions
+    public class TemplateDashboardOptions
     {
         /// <summary>
         /// The path for the Back To Site link. Set to <see langword="null" /> in order to hide the link.

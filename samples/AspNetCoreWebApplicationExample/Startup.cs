@@ -28,7 +28,7 @@ namespace AspNetCoreWebApplicationExample
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            services.AddEmailTemplateLibraryServices(new DashboardOptions()
+            services.AddEmailTemplateLibraryServices(new TemplateDashboardOptions()
             {
                 IgnoreAntiforgeryToken = true,
                 LoadBaseTemplates = true

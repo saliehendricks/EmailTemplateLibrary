@@ -3,11 +3,11 @@ using System.Security.Authentication;
 
 namespace EmailTemplateLibrary.Storage.Mongo
 {
-    public class MongoDBContext<T> : IMongoDBContext where T : class
+    public class MongoTemplateDBContext<T> : IMongoDBContext where T : class
     {
         private IMongoDatabase _db { get; set; }
         private MongoClient _mongoClient { get; set; }
-        public MongoDBContext(string connectionString, string databaseName = "templates")
+        public MongoTemplateDBContext(string connectionString, string databaseName = "templates")
         {
             MongoClientSettings settings = MongoClientSettings.FromUrl(new MongoUrl(connectionString));
             settings.SslSettings = new SslSettings() { EnabledSslProtocols = SslProtocols.Tls12 };

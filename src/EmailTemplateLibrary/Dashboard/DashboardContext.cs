@@ -6,7 +6,7 @@ namespace EmailTemplateLibrary.Dashboard
     public class DashboardContext 
     {
         public TemplateStorage Storage { get; set; }
-        public DashboardOptions Options { get; set; }
+        public TemplateDashboardOptions Options { get; set; }
         public Match UriMatch { get; set; }
         public DashboardRequest Request { get; set; }
         public DashboardResponse Response { get; set; }

@@ -13,14 +13,14 @@ namespace EmailTemplateLibrary.AspNetCore.Dashboard
     public class AspNetCoreDashboardMiddleware
     {
         private readonly RequestDelegate _next;
-        private readonly DashboardOptions _options;
+        private readonly TemplateDashboardOptions _options;
         private readonly RouteCollection _routes;
         private readonly TemplateStorage _storage;
 
         public AspNetCoreDashboardMiddleware(
             RequestDelegate next,
             TemplateStorage storage,
-            DashboardOptions options,
+            TemplateDashboardOptions options,
             RouteCollection routes)
         {
             if (next == null) throw new ArgumentNullException(nameof(next));

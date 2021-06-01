@@ -9,7 +9,7 @@ An easy way to add string based templates to your dotnet application. Store and 
 
 Storage options:
 - File: Stores templates on disk. Suitable for single site web applications or service.
-- Mongo - TODO 
+- Mongo: Stores templates in MongoDB
 - SQL - TODO
 
 # Base Templates
@@ -40,9 +40,30 @@ public void Configuration(IAppBuilder app)
 }
 ```
 
+## Storage Options
+
+Mongo:
+
+Add a reference to EmailTemplateLibrary.Storage.Mongo and in your Startup.cs:
+```cs
+using EmailTemplateLibrary.Storage.Mongo;
+```
+Configure services:
+```cs
+services.AddEmailTemplateLibraryServices(new DashboardOptions()
+            {
+                IgnoreAntiforgeryToken = true,
+                LoadBaseTemplates = true
+            })
+            .AddMongoStorage(new MongoStorageOptions()
+            {
+                UrlConnection = Configuration.GetValue<string>("MongoUrl")
+            });
+```
+
 ## TODO
-- [x] Sample project showing usage
+- [X] Sample project showing usage
 - [ ] Default Templates
-- [ ] Mongo Storage
+- [X] Mongo Storage
 - [ ] SQL Storage
 - [ ] Override Styles

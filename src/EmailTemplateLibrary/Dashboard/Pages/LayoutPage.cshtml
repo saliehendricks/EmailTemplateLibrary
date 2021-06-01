@@ -13,7 +13,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    @{ var version = GetType().GetTypeInfo().Assembly.GetName().Version; }
 </head>
 <body>
     <div id="wrap">
@@ -26,7 +27,7 @@
             <ul class="list-inline credit">
                 <li>
                     <a href="" target="_blank" rel="noopener noreferrer">
-                        Email Template Library v0.0.1
+                        Email Template Library v<span>@VersionText</span>
                     </a>
                 </li>
                 <li>@Storage</li>
@@ -37,7 +38,7 @@
              data-baseurl="@(Url.To("/"))">
         </div>
     </div>
-    @{ var version = GetType().GetTypeInfo().Assembly.GetName().Version; }
+    
     <script src="@Url.To($"/js{version.Major}{version.Minor}{version.Build}0")"></script>
 </body>
 </html>

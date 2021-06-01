@@ -26,7 +26,7 @@ PM> Install-Package EmailTemplateLibrary
 Then update your Startup.cs file:
 
 ```cs
-services.AddEmailTemplateLibraryServices(new DashboardOptions()
+services.AddEmailTemplateLibraryServices(new TemplateDashboardOptions()
             {
                 IgnoreAntiforgeryToken = true,
                 LoadBaseTemplates = true
@@ -50,15 +50,14 @@ using EmailTemplateLibrary.Storage.Mongo;
 ```
 Configure services:
 ```cs
-services.AddEmailTemplateLibraryServices(new DashboardOptions()
-            {
-                IgnoreAntiforgeryToken = true,
-                LoadBaseTemplates = true
-            })
-            .AddMongoStorage(new MongoStorageOptions()
-            {
-                UrlConnection = Configuration.GetValue<string>("MongoUrl")
-            });
+services.AddEmailTemplateLibraryServices(new TemplateDashboardOptions()
+{
+            IgnoreAntiforgeryToken = true,
+            LoadBaseTemplates = true
+}).AddMongoStorage(new MongoStorageOptions()
+{
+            UrlConnection = Configuration.GetValue<string>("ConnectionStrings.MainConnection")
+});
 ```
 
 ## TODO

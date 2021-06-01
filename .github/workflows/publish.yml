@@ -2,10 +2,11 @@ name: Publish Packages
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master ] 
 
 jobs:
   build:
+    if: github.event_name == 'push' && contains(toJson(github.event.commits), 'releasetonuget') == true
     runs-on: ubuntu-latest
 
     steps:

@@ -19,17 +19,17 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Publish EmailTemplateLibrary
-      uses: brandedoutcast/publish-nuget@v2.5.5
+      uses: brandedoutcast/publish-nuget@v2.5.4
       with:
           PROJECT_FILE_PATH: src/EmailTemplateLibrary/EmailTemplateLibrary.csproj
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
     - name: Publish EmailTemplateLibrary.AspNetCore
-      uses: brandedoutcast/publish-nuget@v2.5.5
+      uses: brandedoutcast/publish-nuget@v2.5.4
       with:
           PROJECT_FILE_PATH: src/EmailTemplateLibrary.AspNetCore/EmailTemplateLibrary.AspNetCore.csproj
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
     - name: Publish EmailTemplateLibrary.Storage.Mongo
-      uses: brandedoutcast/publish-nuget@v2.5.5
+      uses: brandedoutcast/publish-nuget@v2.5.4
       with:
           PROJECT_FILE_PATH: src/EmailTemplateLibrary.Storage.Mongo/EmailTemplateLibrary.Storage.Mongo.csproj
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}

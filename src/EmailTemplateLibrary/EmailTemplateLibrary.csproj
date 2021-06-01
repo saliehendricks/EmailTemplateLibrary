@@ -36,12 +36,13 @@
 		<RepositoryType>Github</RepositoryType>
 		<PackageTags>Template, Strings, Email, SMS</PackageTags>
 		<PackageReleaseNotes>01 June 2021
-- First version released for beta testing</PackageReleaseNotes>
+- First version released for beta testing
+		</PackageReleaseNotes>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
-		<Version>1.0.0.0</Version>
-		<AssemblyVersion>1.0.0.0</AssemblyVersion>
-		<FileVersion>1.0.0.0</FileVersion>
+		<Version>1.0.0.1</Version>
+		<AssemblyVersion>1.0.0.1</AssemblyVersion>
+		<FileVersion>1.0.0.1</FileVersion>
 	</PropertyGroup>
 
 	<Target Name="GenerateRazorClasses">

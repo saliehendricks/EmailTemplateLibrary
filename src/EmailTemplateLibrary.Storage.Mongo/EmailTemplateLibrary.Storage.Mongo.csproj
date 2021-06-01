@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+	<TargetFrameworks>netstandard2.0;netcoreapp3.1;net5.0</TargetFrameworks>
     <Authors>Salie Hendricks</Authors>
     <Description>An easy way to add, store and retreive string based templates to your dotnet application. Uses Mongo as the backend store for templates</Description>
     <Copyright>MIT License</Copyright>

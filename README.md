@@ -1,6 +1,6 @@
 # Email Template Library
 
-## Build Status
+[![Nuget](https://github.com/saliehendricks/EmailTemplateLibrary/actions/workflows/publish.yml/badge.svg)](https://github.com/saliehendricks/EmailTemplateLibrary/actions/workflows/publish.yml)
 
 ## Overview
 An easy way to add string based templates to your dotnet application. Store and modify string or html based templates for emails, sms' or anything else that requires a template.

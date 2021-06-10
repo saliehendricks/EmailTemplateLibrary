@@ -2,6 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>1.0.1</Version>
+    <Authors>Salie Hendricks</Authors>
+    <Product>Salie Hendricks</Product>
+    <Description>An easy way to add, store and retreive string based templates to your dotnet application. Uses Postgres as the backend store for templates</Description>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageIcon>icon.png</PackageIcon>
+    <RepositoryType>Git</RepositoryType>
+    <RepositoryUrl>https://github.com/saliehendricks/EmailTemplateLibrary</RepositoryUrl>
+    <PackageReleaseNotes>01 June 2021
+- First version released for beta testing
+6 June 2021
+- Postgres support</PackageReleaseNotes>
+    <PackageTags>Template, Strings, Email, SMS</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,6 +24,17 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EmailTemplateLibrary\EmailTemplateLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

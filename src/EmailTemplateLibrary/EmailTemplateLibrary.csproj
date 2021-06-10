@@ -37,12 +37,11 @@
 		<PackageTags>Template, Strings, Email, SMS</PackageTags>
 		<PackageReleaseNotes>01 June 2021
 - First version released for beta testing
-		</PackageReleaseNotes>
+6 June 2021
+- Postgres support</PackageReleaseNotes>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
-		<Version>1.0.0.1</Version>
-		<AssemblyVersion>1.0.0.1</AssemblyVersion>
-		<FileVersion>1.0.0.1</FileVersion>
+		<Version>1.0.1</Version>
 	</PropertyGroup>
 
 	<Target Name="GenerateRazorClasses">

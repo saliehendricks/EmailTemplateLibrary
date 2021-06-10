@@ -53,7 +53,6 @@ namespace EmailTemplateLibrary
             var routes = builder.ApplicationServices.GetRequiredService<RouteCollection>();
             var storage = builder.ApplicationServices.GetRequiredService<TemplateStorage>();
             var options = builder.ApplicationServices.GetRequiredService<TemplateDashboardOptions>();
-            //storage == null ? new FileTemplateStorage() : storage;
             builder.Map(new PathString(pathMatch), x => x.UseMiddleware<AspNetCoreDashboardMiddleware>(storage, options, routes));
             return builder;
         }        

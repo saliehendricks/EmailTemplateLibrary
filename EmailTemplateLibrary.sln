@@ -14,15 +14,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C021C112
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{82546879-2B5A-4699-B145-DDDFE1627237}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreWebApplicationExample", "samples\AspNetCoreWebApplicationExample\AspNetCoreWebApplicationExample.csproj", "{79D0F983-6F4F-43E2-81A2-4C21FD094C92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreWebApplicationExample", "samples\AspNetCoreWebApplicationExample\AspNetCoreWebApplicationExample.csproj", "{79D0F983-6F4F-43E2-81A2-4C21FD094C92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailTemplateLibrary.AspNetCore", "src\EmailTemplateLibrary.AspNetCore\EmailTemplateLibrary.AspNetCore.csproj", "{1AF445A6-AEE6-420A-BE21-2DB9386731A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailTemplateLibrary.AspNetCore", "src\EmailTemplateLibrary.AspNetCore\EmailTemplateLibrary.AspNetCore.csproj", "{1AF445A6-AEE6-420A-BE21-2DB9386731A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCoreConsoleApp", "samples\DotNetCoreConsoleApp\DotNetCoreConsoleApp.csproj", "{EF94A41F-BCE5-40E7-B920-B05D7A0E16DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCoreConsoleApp", "samples\DotNetCoreConsoleApp\DotNetCoreConsoleApp.csproj", "{EF94A41F-BCE5-40E7-B920-B05D7A0E16DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailTemplateLibrary.Storage.Mongo", "src\EmailTemplateLibrary.Storage.Mongo\EmailTemplateLibrary.Storage.Mongo.csproj", "{86761341-4BDE-4B69-A28F-C4FC297B7715}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailTemplateLibrary.Storage.Mongo", "src\EmailTemplateLibrary.Storage.Mongo\EmailTemplateLibrary.Storage.Mongo.csproj", "{86761341-4BDE-4B69-A28F-C4FC297B7715}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailTemplateLibrary.UnitTests", "tests\EmailTemplateLibrary.UnitTests\EmailTemplateLibrary.UnitTests.csproj", "{0F8EC27F-9DBC-41AC-AE21-7367A9BD5058}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailTemplateLibrary.UnitTests", "tests\EmailTemplateLibrary.UnitTests\EmailTemplateLibrary.UnitTests.csproj", "{0F8EC27F-9DBC-41AC-AE21-7367A9BD5058}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailTemplateLibrary.Storage.Postgres", "src\EmailTemplateLibrary.Storage.Postgres\EmailTemplateLibrary.Storage.Postgres.csproj", "{59ACA443-3CC5-4F35-A90B-AF3CB1763035}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,6 +56,10 @@ Global
 		{0F8EC27F-9DBC-41AC-AE21-7367A9BD5058}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F8EC27F-9DBC-41AC-AE21-7367A9BD5058}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F8EC27F-9DBC-41AC-AE21-7367A9BD5058}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59ACA443-3CC5-4F35-A90B-AF3CB1763035}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59ACA443-3CC5-4F35-A90B-AF3CB1763035}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59ACA443-3CC5-4F35-A90B-AF3CB1763035}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59ACA443-3CC5-4F35-A90B-AF3CB1763035}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

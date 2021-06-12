@@ -26,6 +26,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailTemplateLibrary.UnitTe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailTemplateLibrary.Storage.Postgres", "src\EmailTemplateLibrary.Storage.Postgres\EmailTemplateLibrary.Storage.Postgres.csproj", "{59ACA443-3CC5-4F35-A90B-AF3CB1763035}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailTemplateLibrary.Storage.Sql", "src\EmailTemplateLibrary.Storage.Sql\EmailTemplateLibrary.Storage.Sql.csproj", "{22709D46-2D58-48CD-8728-C4AC72C1DF6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailTemplateLibrary.Storage.Base", "src\EmailTemplateLibrary.Storage.Base\EmailTemplateLibrary.Storage.Base.csproj", "{B4133232-AF3A-4151-81FE-2BC3C74A5B57}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,6 +64,14 @@ Global
 		{59ACA443-3CC5-4F35-A90B-AF3CB1763035}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59ACA443-3CC5-4F35-A90B-AF3CB1763035}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59ACA443-3CC5-4F35-A90B-AF3CB1763035}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22709D46-2D58-48CD-8728-C4AC72C1DF6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22709D46-2D58-48CD-8728-C4AC72C1DF6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22709D46-2D58-48CD-8728-C4AC72C1DF6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22709D46-2D58-48CD-8728-C4AC72C1DF6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4133232-AF3A-4151-81FE-2BC3C74A5B57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4133232-AF3A-4151-81FE-2BC3C74A5B57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4133232-AF3A-4151-81FE-2BC3C74A5B57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4133232-AF3A-4151-81FE-2BC3C74A5B57}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -34,3 +34,8 @@ jobs:
       with:
           PROJECT_FILE_PATH: src/EmailTemplateLibrary.Storage.Mongo/EmailTemplateLibrary.Storage.Mongo.csproj
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+    - name: Publish EmailTemplateLibrary.Storage.Postgres
+      uses: brandedoutcast/publish-nuget@v2.5.4
+      with:
+          PROJECT_FILE_PATH: src/EmailTemplateLibrary.Storage.Postgres/EmailTemplateLibrary.Storage.Postgres.csproj
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}

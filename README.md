@@ -10,13 +10,14 @@ An easy way to add string based templates to your dotnet application. Store and 
 Storage options:
 - File: Stores templates on disk. Suitable for single site web applications or service.
 - Mongo: Stores templates in MongoDB
-- SQL - TODO
+- SQL : Stores templates in a standard SQL table
+- Postgres : as above
 
 # Base Templates
 Optionally include base templates:
 - NewUserActivationEmail
-- NewUserAdminActivationEmail
-- PasswordResetEmail
+- NewUserAdminActivationEmail - TODO
+- PasswordResetEmail - TODO
 
 # Installation
 
@@ -60,9 +61,31 @@ services.AddEmailTemplateLibraryServices(new TemplateDashboardOptions()
 });
 ```
 
+SQL / Postgres
+Add a reference to EmailTemplateLibrary.Storage.Sql or EmailTemplateLibrary.Storage.Postgres and in your Startup.cs:
+
+```cs
+using EmailTemplateLibrary.Storage.Postgres;
+```
+Configure services:
+```cs
+services
+.AddEmailTemplateLibraryServices(new EmailTemplateLibrary.Dashboard.TemplateDashboardOptions())
+.AddPostgresStorage(new PostgreStorageOptions
+{
+            ConnectionString = connString
+});
+
+var templateStore = serviceProvider.GetService<TemplateStorage>();			
+templateStore.CreateBaseTemplates(); //optional
+
+```
+
+See samples for .Net 5 Console and AspnetCore
+
 ## TODO
 - [X] Sample project showing usage
 - [ ] Default Templates
 - [X] Mongo Storage
-- [ ] SQL Storage
+- [X] SQL Storage
 - [ ] Override Styles

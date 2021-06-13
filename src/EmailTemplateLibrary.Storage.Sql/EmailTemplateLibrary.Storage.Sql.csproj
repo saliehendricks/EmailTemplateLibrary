@@ -2,17 +2,45 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Salie Hendricks</Authors>
+    <Company>Salie Hendricks</Company>
+    <Product>Salie Hendricks</Product>
+    <Description>An easy way to add, store and retreive string based templates to your dotnet application. Uses MSSQL/SQLLite as the backend store for templates</Description>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageIcon>icon.png</PackageIcon>
+    <RepositoryUrl>https://github.com/saliehendricks/EmailTemplateLibrary</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>Template, Strings, Email, SMS</PackageTags>
+    <PackageReleaseNotes>01 June 2021
+- First version released for beta testing
+6 June 2021
+- Postgres support
+13 June 2021
+- SQL support</PackageReleaseNotes>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
     <PackageReference Include="ServiceStack.OrmLite" Version="5.11.0" />
+    <PackageReference Include="ServiceStack.OrmLite.Sqlite" Version="5.11.0" />
     <PackageReference Include="ServiceStack.OrmLite.SqlServer" Version="5.11.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\EmailTemplateLibrary.Storage.Base\EmailTemplateLibrary.Storage.Base.csproj" />
     <ProjectReference Include="..\EmailTemplateLibrary\EmailTemplateLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

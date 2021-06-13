@@ -38,10 +38,12 @@
 		<PackageReleaseNotes>01 June 2021
 - First version released for beta testing
 6 June 2021
-- Postgres support</PackageReleaseNotes>
+- Postgres support
+13 June 2021
+- SQL support</PackageReleaseNotes>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
-		<Version>1.0.1</Version>
+		<Version>1.0.2</Version>
 	</PropertyGroup>
 
 	<Target Name="GenerateRazorClasses">

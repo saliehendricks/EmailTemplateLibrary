@@ -1,7 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>1.0.2</Version>
+    <Authors>Salie Hendricks</Authors>
+    <Company>Salie Hendricks</Company>
+    <Product>Salie Hendricks</Product>
+    <Description>An easy way to add, store and retreive string based templates to your dotnet application.</Description>
   </PropertyGroup>
 
   <ItemGroup>

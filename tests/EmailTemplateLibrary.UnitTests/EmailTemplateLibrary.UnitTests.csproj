@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\EmailTemplateLibrary.Storage.Sql\EmailTemplateLibrary.Storage.Sql.csproj" />
     <ProjectReference Include="..\..\src\EmailTemplateLibrary\EmailTemplateLibrary.csproj" />
   </ItemGroup>
 

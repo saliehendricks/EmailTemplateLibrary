@@ -1,8 +1,5 @@
 ﻿using System;
-using EmailTemplateLibrary.Model;
 using ServiceStack.OrmLite;
-using System.Collections.Generic;
-using System.Linq;
 using EmailTemplateLibrary.Storage.Base;
 
 namespace EmailTemplateLibrary.Storage.Sql

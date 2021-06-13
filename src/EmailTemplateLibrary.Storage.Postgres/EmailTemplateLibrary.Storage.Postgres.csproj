@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EmailTemplateLibrary.Storage.Base\EmailTemplateLibrary.Storage.Base.csproj" />
     <ProjectReference Include="..\EmailTemplateLibrary\EmailTemplateLibrary.csproj" />
   </ItemGroup>
 

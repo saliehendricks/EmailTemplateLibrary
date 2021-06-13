@@ -42,5 +42,5 @@ jobs:
     - name: Publish EmailTemplateLibrary.Storage.Sql
       uses: brandedoutcast/publish-nuget@v2.5.4
       with:
-          PROJECT_FILE_PATH: src/EmailTemplateLibrary.Storage.Postgres/EmailTemplateLibrary.Storage.Sql.csproj
+          PROJECT_FILE_PATH: src/EmailTemplateLibrary.Storage.Sql/EmailTemplateLibrary.Storage.Sql.csproj
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}

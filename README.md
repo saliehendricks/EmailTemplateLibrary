@@ -87,9 +87,11 @@ See samples for .Net 5 Console and AspnetCore
 Once running, if you installed the ASPNetCore package you will be able to access the url "http://yoururl/templates".
 
 New:
+
 ![image](https://user-images.githubusercontent.com/1830594/136530424-744e18b6-5f02-4dd5-8b72-1d15b9a67c93.png)
 
 Edit:
+
 ![image](https://user-images.githubusercontent.com/1830594/136530304-4567620b-e367-453b-8730-e48002f129e6.png)
 
 
